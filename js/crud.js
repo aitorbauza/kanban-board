@@ -1,3 +1,4 @@
+// ========== FUNCIONS CRUD ==========
 function afegirTasca(tasca) {
     tasques.push(tasca);
     guardarTasques();
