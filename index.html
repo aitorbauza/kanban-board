@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="css/estils.css">
+</head>
+<body>
+    <header>
+        <h1>Kanban Board</h1>
+    </header>
+
+    <main>
+        <aside class="formulari">
+            <h2>Nova tasca</h2>
+            <form id="taskForm">
+                <label for="title">Títol *</label>
+                <input type="text" id="title" required>
+
+                <label for="desc">Descripció</label>
+                <textarea id="desc"></textarea>
+
+                <label for="priority">Prioritat</label>
+                <select id="priority">
+                    <option value="baixa">Baixa</option>
+                    <option value="mitjana">Mitjana</option>
+                    <option value="alta">Alta</option>
+                </select>
+
+                <label for="date">Data límit</label>
+                <input type="date" id="date">
+
+                <button type="submit">Crear tasca</button>
+                <button type="button" id="cancelEdit" style="display:none;">Cancel·lar</button>
+            </form>
+        </aside>
+
+        <section class="filtres">
+            <h2>Filtres i cerca</h2>
+            <input type="text" id="search" placeholder="Cerca per títol o descripció...">
+            
+            <select id="filterStatus">
+                <option value="totes">Tots els estats</option>
+                <option value="perFer">Per fer</option>
+                <option value="enCurs">En curs</option>
+                <option value="fet">Fet</option>
+            </select>
+
+            <select id="filterPriority">
+                <option value="totes">Totes les prioritats</option>
+                <option value="baixa">Baixa</option>
+                <option value="mitjana">Mitjana</option>
+                <option value="alta">Alta</option>
+            </select>
+        </section>
+
+        <section class="kanban">
+            <div class="column" data-status="perFer">
+                <h3>Per fer</h3>
+                <div class="task-list" id="perFerList"></div>
+            </div>
+            <div class="column" data-status="enCurs">
+                <h3>En curs</h3>
+                <div class="task-list" id="enCursList"></div>
+            </div>
+            <div class="column" data-status="fet">
+                <h3>Fet</h3>
+                <div class="task-list" id="fetList"></div>
+            </div>
+        </section>
+
+        <aside class="estadistiques">
+            <h2>Estadístiques</h2>
+            <p>Total: <span id="totalTasks">0</span></p>
+            <p>Per fer: <span id="perFerCount">0</span></p>
+            <p>En curs: <span id="enCursCount">0</span></p>
+            <p>Fet: <span id="fetCount">0</span></p>
+            <p>Percentatge completat: <span id="percentCompletat">0</span>%</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>Aitor Bauza Gomez - 2o DAW - 25/26</p>
+    </footer>
+
+    <script src="js/model.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/crud.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
