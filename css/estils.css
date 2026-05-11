@@ -1,0 +1,139 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f5f7;
+    padding: 20px;
+}
+
+header {
+    background-color: #172b4d;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Formulari */
+.formulari {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.formulari form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulari input, .formulari textarea, .formulari select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.formulari button {
+    background-color: #0052cc;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Filtres */
+.filtres {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filtres input, .filtres select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+}
+
+/* Tauler Kanban */
+.kanban {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.column {
+    background-color: #ebecf0;
+    border-radius: 8px;
+    padding: 10px;
+    flex: 1;
+    min-width: 250px;
+}
+
+.column h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.task-list {
+    min-height: 200px;
+}
+
+/* Estadístiques */
+.estadistiques {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .kanban {
+        flex-direction: column;
+    }
+    
+    .filtres {
+        flex-direction: column;
+    }
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.task-card button {
+    background-color: #172b4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.task-card select {
+    padding: 5px;
+    border-radius: 4px;
+}
+
+#cancelEdit {
+    background-color: #6b778c;
+}
