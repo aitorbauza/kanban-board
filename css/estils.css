@@ -137,3 +137,13 @@ footer {
 #cancelEdit {
     background-color: #6b778c;
 }
+
+/* Drag & drop */
+.task-card[draggable="true"]:active {
+    cursor: grabbing;
+}
+
+.column.drag-over {
+    background-color: #d0e2ff;
+    transition: background-color 0.2s;
+}

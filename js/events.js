@@ -75,4 +75,25 @@ function setupEventListeners() {
         filtres.cerca = e.target.value;
         renderitzarTauler();
     });
+
+    const columns = document.querySelectorAll('.column');
+    
+    columns.forEach(column => {
+        column.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+        });
+        
+        column.addEventListener('drop', (e) => {
+            e.preventDefault();
+            
+            if (draggedTaskId === null) return;
+        
+            const nouEstat = column.getAttribute('data-status');
+            // Canviar l'estat de la tasca
+            canviarEstatTasca(draggedTaskId, nouEstat);
+            
+            draggedTaskId = null;
+        });
+    });
 }

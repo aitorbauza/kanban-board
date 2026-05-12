@@ -71,6 +71,12 @@ function crearTargetaTasca(tasca) {
     div.style.margin = '10px 0';
     div.style.borderRadius = '8px';
     div.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+    div.setAttribute('draggable', 'true');
+    div.setAttribute('data-id', tasca.id);
+    
+    // Event per recordar quina tasca s'està arrossegant
+    div.addEventListener('dragstart', handleDragStart);
+    div.addEventListener('dragend', handleDragEnd);
       
     div.innerHTML = `
         <h4>${escapeHtml(tasca.titol)}</h4>
@@ -90,6 +96,20 @@ function crearTargetaTasca(tasca) {
     `;
     
     return div;
+}
+
+// Variables globals pel drag & drop
+let draggedTaskId = null;
+
+function handleDragStart(e) {
+    draggedTaskId = this.getAttribute('data-id');
+    this.style.opacity = '0.5';
+    e.dataTransfer.effectAllowed = 'move';
+}
+
+function handleDragEnd(e) {
+    this.style.opacity = '1';
+    draggedTaskId = null;
 }
 
 function getPrioritatColor(prioritat) {
