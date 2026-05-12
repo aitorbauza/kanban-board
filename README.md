@@ -55,6 +55,7 @@ kanban-board/
 1. Utilitzeu el selector desplegable de cada targeta.
 2. Trieu l'estat nou: "Per fer", "En curs" o "Fet".
 3. La tasca es mourà automàticament a la columna corresponent.
+4. Es pot moure la tasca arrossegant-la a la columna corresponent, l'estat canviarà segons la columna on s'ha arrossegat
 
 ### Filtrar i cercar tasques
 
